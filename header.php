@@ -17,7 +17,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html"><img src="images/logo.svg" alt="" class="logo" /></a>
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.svg" alt="Logo"></a>
 						<?php if ( has_nav_menu('main-menu') ) { wp_nav_menu(array('theme_location'=>'main-menu','container'=>'nav','menu_class'=>'nav')); } else { ?>
 <nav>
 <ul class="nav">
