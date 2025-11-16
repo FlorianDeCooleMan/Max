@@ -28,6 +28,12 @@
                 </div>
                 
                 <footer>
+
+                    <!-- ✅ Continue Reading knop toegevoegd -->
+                    <ul class="actions">
+                        <li><a href="<?php the_permalink(); ?>" class="button">Continue Reading</a></li>
+                    </ul>
+
                     <ul class="stats">
                         <li><?php the_category(', '); ?></li>
                         <li><a href="<?php the_permalink(); ?>#comments" class="icon solid fa-comment"><?php comments_number('0','1','%'); ?></a></li>
@@ -53,7 +59,5 @@
         <?php get_sidebar(); ?>
         <?php get_footer(); ?>
     </div>
-
-    
 
 </div>

@@ -2888,3 +2888,25 @@ body.is-menu-visible #menu {
   padding-bottom: .5rem;
 }
 
+.mini-post {
+    position: relative;
+}
+
+.mini-post .author-avatar {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.mini-post .author-avatar img {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+#sidebar .author img,
+#sidebar img.avatar {
+    border-radius: 50% !important;
+    object-fit: cover;
+    width: 48px;
+    height: 48px;
+}

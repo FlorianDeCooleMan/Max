@@ -11,8 +11,10 @@
                 </div>
                 <div class="meta">
                     <time class="published" datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date(); ?></time>
-                    <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author"><span class="name"><?php the_author(); ?></span>
-                    <?php if ( get_avatar( get_the_author_meta('ID') ) ) echo get_avatar( get_the_author_meta('ID'), 32 ); ?></a>
+                    <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author">
+                        <span class="name"><?php the_author(); ?></span>
+                        <?php if ( get_avatar( get_the_author_meta('ID') ) ) echo get_avatar( get_the_author_meta('ID'), 32 ); ?>
+                    </a>
                 </div>
             </header>
             <?php if ( has_post_thumbnail() ) : ?>
@@ -26,8 +28,6 @@
                 </ul>
             </footer>
         </article>
-
-        <?php comments_template(); ?>
 
     <?php endwhile; endif; ?>
     </div>

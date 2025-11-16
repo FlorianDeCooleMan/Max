@@ -18,18 +18,36 @@
             <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="<?php bloginfo('name'); ?>" class="logo" />
         </a>
 
-        <!-- Primary navigation (links) -->
-        <nav class="links">
-            <?php
-            wp_nav_menu(array(
-                'theme_location' => 'primary',
-                'container' => false,
-                'menu_class' => '',
-                'items_wrap' => '<ul>%3$s</ul>',
-                'fallback_cb' => 'wp_page_menu'
-            ));
+<!-- Drie nieuwste posts -->
+<nav class="links">
+    <ul>
+        <?php
+        $recent_posts = new WP_Query(array(
+            'posts_per_page' => 3,
+            'post_status'    => 'publish'
+        ));
+
+        if ($recent_posts->have_posts()) :
+            while ($recent_posts->have_posts()) :
+                $recent_posts->the_post();
+                ?>
+                <li>
+                    <a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                    </a>
+                </li>
+                <?php
+            endwhile;
+            wp_reset_postdata();
+        else :
             ?>
-        </nav>
+            <li><a href="#">Geen recente berichten</a></li>
+            <?php
+        endif;
+        ?>
+    </ul>
+</nav>
+
 
         <!-- Secondary navigation (main) -->
         <nav class="main">
@@ -90,6 +108,5 @@
 </section>
 
 
-<?php wp_footer(); ?>
 </body>
 </html>
